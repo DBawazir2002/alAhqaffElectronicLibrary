@@ -11,3 +11,6 @@
 # To access admin dashboard these credentials:
 # 1. email => admin@gmail.com
 # 1. password => adminadmin
+
+
+# To access user dashboard you can register as a new user
