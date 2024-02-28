@@ -16,7 +16,7 @@ class DefaultAdminSeeder extends Seeder
     public function run(): void
     {
             User::firstOrCreate([
-                'email' => 'admin@admin.com',
+                'email' => 'admin@gmail.com',
                 'name' => 'admin',
                 'password' =>Hash::make('adminadmin'),
                 'role' => 1,
