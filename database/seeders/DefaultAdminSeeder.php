@@ -15,14 +15,12 @@ class DefaultAdminSeeder extends Seeder
      */
     public function run(): void
     {
-        if (config('admin.admin_name')) {
             User::firstOrCreate([
-                'email' => config('admin.admin_email'),
-                'name' => config('admin.admin_name'),
-                'password' =>Hash::make(config('admin.admin_password')),
-                'role' => config('admin.admin_role'),
+                'email' => 'admin@admin.com',
+                'name' => 'admin',
+                'password' =>Hash::make('adminadmin'),
+                'role' => 1,
                 'created_at' => Carbon::now()
             ]);
-        }
     }
 }

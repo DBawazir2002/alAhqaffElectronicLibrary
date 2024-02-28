@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->onDelete('cascade');
-            $table->string('title');
+            $table->string('title')->unique();
             $table->string('authorName');
             $table->tinyInteger('rate')->default(0);
             $table->string('size')->default(0);

@@ -44,7 +44,7 @@ class BookController extends Controller
     public function store(BookRequest $request)
     {
         if ($request->validated()) {
-            if(! Book::where('title',$request->title)){
+            // if(Book::where('title',$request->title)){
                 $data = $request->all();
                 $bookCover_name = $request->title . '.' . $request->bookCover->getClientOriginalExtension();
                 $bookCover_path = $request->file('bookCover')->storeAs('booksCover', $bookCover_name, 'public');
@@ -71,8 +71,8 @@ class BookController extends Controller
                 foreach ($users as $user) {
                     Mail::to($user->email)->send(new InsertNewBookMail($data));
                 }
-            }
-            return back()->with('msg','  يرجى التحقق من عنوان الكتاب لقد تم اضافة هذا الكتاب مسبقا');
+            // }
+            // return back()->with('msg','  يرجى التحقق من عنوان الكتاب لقد تم اضافة هذا الكتاب مسبقا');
         }
         return to_route('books.index');
     }
